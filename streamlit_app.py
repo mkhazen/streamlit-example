@@ -2,8 +2,6 @@
 
 import streamlit as st
 import snowflake.connector
-import pandas as pd
-import pyarrow as pa
 
 # Initialize connection.
 # Uses st.experimental_singleton to only run once.
