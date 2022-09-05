@@ -19,8 +19,18 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("select * from customer;")
+
+def get_customers(customer_id):
+    if customer_id is None or customer_id == 'None':
+        return []
+    return run_query(f"select * from customer where C_CUSTKEY='{customer_id}'")
+
+
+customer_id = st.text_input('Choose a customer', None)
+
+
+rows = get_customers(customer_id)
 
 # Print results.
 for row in rows:
-    st.write(f"{row[0]} has a :{row[1]}:")
+    st.write(row)
