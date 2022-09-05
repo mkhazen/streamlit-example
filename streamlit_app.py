@@ -19,7 +19,7 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("select * from customer where C_CUSTKEY='{customer_id}")
+rows = run_query("select * from customer;")
 
 # Print results.
 for row in rows:
